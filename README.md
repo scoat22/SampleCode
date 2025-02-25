@@ -6,13 +6,15 @@ I designed a backend SpreadSheet that holds all of the data in simple arrays and
 Click for a short video.<br />
 [![Watch the video](https://i9.ytimg.com/vi/6lIUX4n4voQ/mqdefault.jpg?sqp=CLS29b0G&rs=AOn4CLBsV5d_cPUFJnKE2s0omqivsAMplw)](https://youtu.be/6lIUX4n4voQ)
 
+I know it looks very simple, and it is (For instance it lacks a classic UI, but that was for design experimentation purposes. I have many UI design showcases on my website). The engine code is really what shines. It's extremely optimized and easy to work with for the developers and artists.
+
 I set up the systems grouped by tick frequency:<br />
-![alt text](https://github.com/scoat22/FantasySimulator/blob/main/Assets/Images/image1.png?raw=true)
+![alt text](https://github.com/scoat22/SampleCode/blob/main/Images/image1.png?raw=true)
 
 Expanded list of systems:<br />
-![alt text](https://github.com/scoat22/FantasySimulator/blob/main/Assets/Images/image2.png?raw=true)
+![alt text](https://github.com/scoat22/SampleCode/blob/main/Images/image2.png?raw=true)
 
-The rendering systems are in the 1/30 Seconds grouped, meaning they'll get ticked 30 times a second. The way I setup the renderer is pretty interesting. If you want to dig into it, the code is here:
+The rendering systems are in the 1/30 Seconds group, meaning they'll get ticked 30 times a second. The way I setup the renderer is pretty interesting. If you want to dig into it, the code is here:
 CharacterRenderingSystem.cs: https://github.com/scoat22/FantasySimulator/blob/main/Assets/Sprite%20Rendering/CharacterRenderingSystem.cs
 GeneralSpriteRenderingSystem.cs: https://github.com/scoat22/FantasySimulator/blob/main/Assets/Sprite%20Rendering/GeneralSpriteRendereringSystem.cs
 
@@ -21,11 +23,9 @@ The CharacterRenderingSystem will search for a sprite sheet that best matches th
 The implementation of the actual game is not finished. It's been more of an engine architecture exploration. I explored many topics in engines/games
 For example:
 1. Automatic Multithreaded job scheduler, where jobs are automically scheduled and completed based on their dependencies. Which in this case, are simple component arrays. So you end up with a tree of dependencies that neatly completes. 
-2. Game model complexity exploration. Games are just models. And models, unlike reality, are constrained by complexity. The more rules you add, complexity increases exponentially. In this case its more obvious because my game is intended as an economic simulation.
-
-
+2. Game model complexity exploration. Games are just models. And models, unlike reality, are constrained by complexity. The more rules you add, complexity increases exponentially. 
 
 If I was to continue development, I would add:
 1. Trading.
 2. A simple supply and demand model where each agent stores the price they believe each good should cost.
-3. 
+3. An actual game loop, where the player can do something to affect the world state. Such as "blessing or cursing" characters or something. Or maybe they can add/remove different rules to the economy simulation to achieve desired quests. Haven't decided exactly what the interaction system looks like yet.
