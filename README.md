@@ -10,7 +10,7 @@ I set up the systems grouped by tick frequency:<br />
 ![alt text](https://github.com/scoat22/SampleCode/blob/main/Images/image1.png?raw=true)
 
 Expanded list of systems:<br />
-![alt text](https://github.com/scoat22/SampleCode/tree/main/Images/image2.png?raw=true)
+![alt text](https://github.com/scoat22/SampleCode/blob/main/Images/image2.png?raw=true)
 
 The rendering systems are in the 1/30 Seconds grouped, meaning they'll get ticked 30 times a second. The way I setup the renderer is pretty interesting. If you want to dig into it, the code is here:
 CharacterRenderingSystem.cs: https://github.com/scoat22/FantasySimulator/blob/main/Assets/Sprite%20Rendering/CharacterRenderingSystem.cs
