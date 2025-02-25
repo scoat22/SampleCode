@@ -68,7 +68,7 @@ If I was to continue development, I would add:
 
 ## Cross Platform Code
 Unity and Unreal handles cross platform challenges pretty seamlessly. Although sometimes you need to pay attention because some features are supported by a platform or not. Usually the engine documentation will tell you. But sometimes they don't, or its out of date, so it's best to test! (Testing is always helpful no matter what you're doing). 
-Additionally, I followed a guide pretty closesly, but I'm familiar with the Win32 API calls in C/C++. You can read the simple platform layer here: <br />
+Additionally, I followed a guide pretty closesly and became familiar with the Win32 API calls in C/C++. You can read the resulting simple platform layer here: <br />
 [Win32_Game.cpp](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/Win32_Game.cpp)
 
 I think that having a single dedicated platform layer file is way better than random "#if Platform_Windows" statements scattered everywhere in the codebase. Those scattered statements make it way harder to port to more platforms, because you're dealing with random blocks of code all over the code base.
