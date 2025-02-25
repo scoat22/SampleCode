@@ -65,6 +65,11 @@ If I was to continue development, I would add:
 2. A simple supply and demand model where each agent stores the price they believe each good should cost.
 3. An actual game loop, where the player can do something to affect the world state. Such as "blessing or cursing" characters or something. Or maybe they can add/remove different rules to the economy simulation to achieve desired quests. Haven't decided exactly what the interaction system looks like yet.
 
+## Kart Racer
+Regarding my game programming knowledge for a Kart Racer game:
+-I made a cart racing game in C++ for one of my classes at University. It was a pretty simple game but I thought that might be relevant. The game imported models for the cart and track. It also accepted waypoint positions for the "enemy" carts to follow. And a heightmap that defined the height of the track at each location.
+-I know basic game vector math (getting vector directions via subtraction, using dot/cross product for calculating relative directions, using squared distance for distance comparisons, rays, ray casts, raymarching etc).
+
 ## Cross Platform Code
 Unity and Unreal handles cross platform challenges pretty seamlessly. Although sometimes you need to pay attention because some features are supported by a platform or not. Usually the engine documentation will tell you. But sometimes they don't, or its out of date, so it's best to test! (Testing is always helpful no matter what you're doing). 
 Additionally, I followed a guide pretty closesly and became familiar with the Win32 API calls in C/C++. You can read the resulting simple platform layer here: <br />
