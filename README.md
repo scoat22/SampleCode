@@ -1,7 +1,7 @@
-An ECS implementation of an economic simulator with fantasy elements. 
+This repo contains some code sample files from an ECS implementation of an economic simulation game with fantasy elements. I don't want to include the whole game's files, for security purposes. But hopefully these samples show some basic programming skills. I wrote all of the code. Please let me know if you have any questions.
 
-As of Feb 2-24-25, it's my most complex game implementation. 
-I designed a backend SpreadSheet that holds all of the data in simple arrays and sparse sets. Therefore, serialization of all data is trivial. This is a surprisingly nice feature to have, and a time saver. 
+As of Feb 2-24-25, it's my most complex game implementation. The actual game isn't very complicated, but the engine is custom and pretty advanced. It's built for 3D, although the sprites look 2D they're actually 3D billboards but they can walk around in 3D if future features require it.
+I designed a backend [SpreadSheet](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SpreadSheet.cs) that holds all of the data in [simple arrays](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/FilledColumn.cs) and [sparse sets](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SparseColumn.cs). Therefore, serialization of all data is trivial. This is a surprisingly nice feature to have, and a time saver. 
 
 Click for a short video.<br />
 [![Watch the video](https://i9.ytimg.com/vi/6lIUX4n4voQ/mqdefault.jpg?sqp=CLS29b0G&rs=AOn4CLBsV5d_cPUFJnKE2s0omqivsAMplw)](https://youtu.be/6lIUX4n4voQ)
