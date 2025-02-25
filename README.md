@@ -1,3 +1,4 @@
+# Code Samples
 This repo contains some code sample files from an ECS implementation of an economic simulation game with fantasy elements. I don't want to include the whole game's files, for security purposes. But hopefully these samples show some basic programming skills. I wrote all of the code. Please let me know if you have any questions.
 
 As of Feb 2-24-25, it's my most complex game implementation. The actual game isn't very complicated, but the engine is custom and pretty advanced. I know it looks 2D (that's just the art style). It's fully 3D capable.
