@@ -564,4 +564,22 @@ namespace SpreadSheetNS
         internal int _nEntities = 0;
         const int MIN_COLUMN_CAPACITY = 1;
     }
+
+    /// <summary>
+    /// Basically a type object for the spreadsheet. You can debug the column names from here, without copying the data for each spreadsheet.
+    /// </summary>
+    public class Signature
+    {
+        /// <summary>
+        /// "Type" name (shouldn't be unique to the instance of the spreadsheet, but the type of spreadsheet)
+        /// </summary>
+        public string name;
+        /// <summary>
+        /// names per column
+        /// </summary>
+        public string[] names = null;
+
+        public string GetName() => string.IsNullOrEmpty(name) ? "Default SpreadSheet" : name;
+        public string GetName(int columnId) => names == null ? columnId.ToString() : names[columnId];
+    }
 }
