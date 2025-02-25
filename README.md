@@ -28,7 +28,7 @@ And here are the implementations for the two main component array types, FilledC
 [SparseColumn.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SparseColumn.cs)<br />
 
 You probably also want to see some implementations of the game code. 
-The producer system is simple, every tick it will create an entity of the desired type:
+The producer system is simple, every tick it will create an entity of the desired type:<br />
 [ProducerSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/ProducerSystem.cs.cs)<br />
 
 Most games have physics systems so I'll provide some physics code as well.
