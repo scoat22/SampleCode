@@ -1,4 +1,4 @@
-This repo contains some sample files from an ECS implementation of an economic simulation game with fantasy elements. I don't want to include the whole game's files, for security purposes. But hopefully these samples show some basic programming skills.  
+This repo contains some code sample files from an ECS implementation of an economic simulation game with fantasy elements. I don't want to include the whole game's files, for security purposes. But hopefully these samples show some basic programming skills.  
 
 As of Feb 2-24-25, it's my most complex game implementation. 
 I designed a backend [SpreadSheet.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SpreadSheet.cs) that holds all of the data in simple arrays and sparse sets. Therefore, serialization of all data is trivial. This is a surprisingly nice feature to have, and a time saver. 
