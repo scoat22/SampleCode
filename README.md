@@ -6,10 +6,10 @@ I designed a backend SpreadSheet that holds all of the data in simple arrays and
 Click for a short video.<br />
 [![Watch the video](https://i9.ytimg.com/vi/6lIUX4n4voQ/mqdefault.jpg?sqp=CLS29b0G&rs=AOn4CLBsV5d_cPUFJnKE2s0omqivsAMplw)](https://youtu.be/6lIUX4n4voQ)
 
+I know it looks very simple, and it is. But the engine code is what shines. It's extremely optimized and easy to work with for the developers and artists.
+
 I set up the systems grouped by tick frequency:<br />
 ![alt text](https://github.com/scoat22/SampleCode/blob/main/Images/image1.png?raw=true)
-
-I know it looks very simple, and it is. But the engine code is what shines. It's extremely optimized and easy to work with for the developer and artists.
 
 Expanded list of systems:<br />
 ![alt text](https://github.com/scoat22/SampleCode/blob/main/Images/image2.png?raw=true)
