@@ -17,6 +17,8 @@ I set up the systems grouped by tick frequency:<br />
 Expanded list of systems:<br />
 ![alt text](https://github.com/scoat22/SampleCode/blob/main/Images/image2.png?raw=true)
 
+I find that setting up systems visually like this helps a lot. If I had more time, I would build even more visualizations for dependency relationships. Where you could easily see which systems rely on which components. I think that would be very interesting for a next-generation game engine.
+
 ## Rendering 
 The rendering systems are in the 1/30 Seconds group, meaning they'll get ticked 30 times a second. The way I setup the renderer is pretty interesting. If you want to dig into it, the code is here:<br />
 [CharacterRenderingSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/CharacterRenderingSystem.cs)<br />
