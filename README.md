@@ -20,6 +20,13 @@ The rendering systems are in the 1/30 Seconds group, meaning they'll get ticked 
 
 The CharacterRenderingSystem will search for a sprite sheet that best matches the character definition (their list of components), such as "elf", "warrior", "male", etc. If the artist didn't make a defined sprite sheet for that set of components, it'll fall back to a more generally defined one, such as just "elf". Finally, if it can't render the character, the GeneralSpriteRenderingSystem will catch the work and just render a square at that position. This ensures a very stable rendering system. And it makes it easy for artists to just add spritesheets with whatever component definitions they want on them. I think this system is very flexible for both designers and artists, and very simple! Which is important.
 
+The Spreadsheet class is what drives the data backend. It's the "C" in ECS. It stores the component arrays. There are also helper functions in it for copying the spreadsheet and serializing it to disk:<br />
+[SpreadSheet.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SpreadSheet.cs)<br />
+
+And here are the implementations for the two main component array types, FilledColumn and SparseColumn. The FilledColumn is basically just an array and it means that every entity has that component (used for common components like position, sprite, size, etc). The SparseColumn is used for uncommon components, like velocity, race, health, or any specififc piece of data. You can read more about ECS online, but basicaly then whole point of ECS is aligning all the component data in tightly packed arrays so that system code can blaze through it in a single cache line (with no cache misses, which are stealth performance killers). The sparse column is basically an implementation of a sparse set.<br />
+[FilledColumn.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/FilledColumn.cs)<br />
+[SparseColumn.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SparseColumn.cs)<br />
+
 The implementation of the actual game is not finished. It's been more of an engine architecture exploration. I explored many topics in engines/games
 For example:
 1. Automatic Multithreaded job scheduler, where jobs are automically scheduled and completed based on their dependencies. Which in this case, are simple component arrays. So you end up with a tree of dependencies that neatly completes. 
