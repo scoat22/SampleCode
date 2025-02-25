@@ -14,7 +14,7 @@ I set up the systems grouped by tick frequency:<br />
 Expanded list of systems:<br />
 ![alt text](https://github.com/scoat22/SampleCode/blob/main/Images/image2.png?raw=true)
 
-##Rendering 
+## Rendering 
 The rendering systems are in the 1/30 Seconds group, meaning they'll get ticked 30 times a second. The way I setup the renderer is pretty interesting. If you want to dig into it, the code is here:<br />
 [CharacterRenderingSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/CharacterRenderingSystem.cs)<br />
 [GeneralSpriteRenderingSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/GeneralSpriteRendereringSystem.cs)<br />
