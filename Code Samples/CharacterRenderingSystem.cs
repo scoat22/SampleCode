@@ -1,3 +1,6 @@
+// The code for this project is written in C# in conjunction with the Unity engine.
+// Although, most Unity features are not used. I mainly stuck with the engine to have a useable graphics API. Future projects are using Vulkan API.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +14,9 @@ using SpreadSheetNS.Parallel;
 
 using static Unity.Mathematics.math;
 
+// If you're not familiar with Unity, "MonoBehaviour" is just the base class that lets you have an entry-point into
+// the application's main loop. And it lets you rearrange scripts visually, which is helpful for design. On a real project,
+// I'd develop a custom system visualization solution that renders a UI element per ISystem instance.
 public class CharacterRenderingSystem : MonoBehaviour, ISystem
 {
     [SerializeField] List<CharacterSpritesheetScriptableAsset> _Characters = new List<CharacterSpritesheetScriptableAsset>();
