@@ -24,7 +24,7 @@ The rendering systems are in the 1/30 Seconds group, meaning they'll get ticked 
 
 The CharacterRenderingSystem will search for a sprite sheet that best matches the character definition (their list of components), such as "elf", "warrior", "male", etc. If the artist didn't make a defined sprite sheet for that set of components, it'll fall back to a more generally defined one, such as just "elf". Finally, if it can't render the character, the GeneralSpriteRenderingSystem will catch the work and just render a square at that position. This ensures a very stable rendering system. And it makes it easy for artists to just add spritesheets with whatever component definitions they want on them. I think this system is very flexible for both designers and artists, and very simple! Which is important.
 
-By no means is this a full display of my rendering code abilities. I'm writing a Vulkan layer for my 3D modeling software that will interact directly with GPUs. You can read more about my 3D modeler [here](https://ysidrohartzell.wordpress.com/).
+By no means is this a full display of my rendering code abilities. I'm writing a Vulkan layer for my 3D modeling software that will interact directly with GPUs. You can read more about my render code [here](https://ysidrohartzell.wordpress.com/shaders-materials/) or my 3D modeler [here](https://ysidrohartzell.wordpress.com/).
 
 ## Data Backend
 The Spreadsheet class is what drives the data backend. It's the "C" in ECS. It stores the component arrays. There are also helper functions in it for copying the spreadsheet and serializing it to disk:<br />
