@@ -66,7 +66,7 @@ If I was to continue development, I would add:
 3. An actual game loop, where the player can do something to affect the world state. Such as "blessing or cursing" characters or something. Or maybe they can add/remove different rules to the economy simulation to achieve desired quests. Haven't decided exactly what the interaction system looks like yet.
 
 ## Kart Racer
-Regarding my game programming knowledge for a Kart Racer game:
+Regarding my game programming knowledge for a Kart Racer game:<br />
 -I made a cart racing game in C++ for one of my classes at University. It was a pretty simple game but I thought that might be relevant. The game imported models for the cart and track. It also accepted waypoint positions for the "enemy" carts to follow. And a heightmap that defined the height of the track at each location.
 -I know basic game vector math (getting vector directions via subtraction, using dot/cross product for calculating relative directions, using squared distance for distance comparisons, rays, ray casts, raymarching etc).
 
