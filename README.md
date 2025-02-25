@@ -42,6 +42,8 @@ You probably also want to see some implementations of the game code.
 The producer system is simple, every tick it will create an entity of the desired type:<br />
 [ProducerSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/ProducerSystem.cs.cs)<br />
 
+You'll probably notice a "ComponentCode" reference in these system functions. They are basically component IDs corrosponding to an enum called ComponentCode. This allows a stable integer per component "type", so that we can instantly query the spreadsheet for the correct column.
+
 ## Physics Code
 Most games have physics systems so I'll provide some physics code as well. I know pretty basic physics implementation concepts, such as accumulating velocities (forces) every frame for each object, and then just simply adding that summed velocity to the object's position at the end of the frame. If you want to implement collision systems, you could implement conventional convex hull algorithms, maybe escaping early if a simple distance-squared check fails. You could get very thorough, but most games don't need advanced physics. It's best to stick to the simplest model that the game requires. <br />
 The main velocity system will just apply each entity's total velocity (which is just a float3 component) to each entity's position.<br />
