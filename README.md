@@ -7,7 +7,7 @@ Click for a short video.<br />
 [![Watch the video](https://i9.ytimg.com/vi/6lIUX4n4voQ/mqdefault.jpg?sqp=CLS29b0G&rs=AOn4CLBsV5d_cPUFJnKE2s0omqivsAMplw)](https://youtu.be/6lIUX4n4voQ)
 
 I set up the systems grouped by tick frequency:<br />
-![alt text](https://github.com/scoat22/SampleCode/tree/main/Images/image1.png?raw=true)
+![alt text](https://github.com/scoat22/SampleCode/blob/main/Images/image1.png?raw=true)
 
 Expanded list of systems:<br />
 ![alt text](https://github.com/scoat22/SampleCode/tree/main/Images/image2.png?raw=true)
