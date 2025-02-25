@@ -16,7 +16,7 @@ using static Unity.Mathematics.math;
 
 // If you're not familiar with Unity, "MonoBehaviour" is just the base class that lets you have an entry-point into
 // the application's main loop. And it lets you rearrange scripts visually, which is helpful for design. On a real project,
-// I'd develop a custom system visualization solution that renders a UI element per ISystem instance.
+// I'd develop a custom UI solution for this.
 public class CharacterRenderingSystem : MonoBehaviour, ISystem
 {
     [SerializeField] List<CharacterSpritesheetScriptableAsset> _Characters = new List<CharacterSpritesheetScriptableAsset>();
