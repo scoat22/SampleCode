@@ -27,6 +27,20 @@ And here are the implementations for the two main component array types, FilledC
 [FilledColumn.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/FilledColumn.cs)<br />
 [SparseColumn.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SparseColumn.cs)<br />
 
+You probably also want to see some implementations of the game code. 
+The producer system is simple, every tick it will create an entity of the desired type:
+[ProducerSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/ProducerSystem.cs.cs)<br />
+
+Most games have physics systems so I'll provide some physics code as well.
+The main velocity system will just apply each entity's total velocity (which is just a float3 component) to each entity's position.<br />
+[VelocitySystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/VelocitySystem.cs)<br />
+
+The MoveSelf system will just add a velocity multiplied by speed, towards the entity's desired position:<br />
+[MoveSelf.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/MoveSelfSystem.cs)<br />
+
+And finally, the RandomMovementSystem will choose a random desired position for each entity (that has a DesiredDestination component)<br />
+[RandomMovementSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/RandomMovementSystem.cs)<br />
+
 The implementation of the actual game is not finished. It's been more of an engine architecture exploration. I explored many topics in engines/games
 For example:
 1. Automatic Multithreaded job scheduler, where jobs are automically scheduled and completed based on their dependencies. Which in this case, are simple component arrays. So you end up with a tree of dependencies that neatly completes. 
