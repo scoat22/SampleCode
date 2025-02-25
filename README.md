@@ -43,7 +43,7 @@ The producer system is simple, every tick it will create an entity of the desire
 [ProducerSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/ProducerSystem.cs.cs)<br />
 
 ## Physics Code
-Most games have physics systems so I'll provide some physics code as well. I know pretty basic physics implementation concepts, such as accumulating velocities (forces) every frame to each object, and then just simply adding them together at the end of the frame. If you want to implement collision systems, you could implement conventional convex hull algorithms. You could get very thorough, but most games don't need advanced physics. It's best to stick to the simplest model that the game requires. 
+Most games have physics systems so I'll provide some physics code as well. I know pretty basic physics implementation concepts, such as accumulating velocities (forces) every frame for each object, and then just simply adding that summed velocity to the object's position at the end of the frame. If you want to implement collision systems, you could implement conventional convex hull algorithms, maybe escaping early if a simple distance-squared check fails. You could get very thorough, but most games don't need advanced physics. It's best to stick to the simplest model that the game requires. 
 The main velocity system will just apply each entity's total velocity (which is just a float3 component) to each entity's position.<br />
 [VelocitySystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/VelocitySystem.cs)<br />
 
