@@ -9,6 +9,8 @@ Click for a short video.<br />
 I set up the systems grouped by tick frequency:<br />
 ![alt text](https://github.com/scoat22/SampleCode/blob/main/Images/image1.png?raw=true)
 
+I know it looks very simple, and it is. But the engine code is what shines. It's extremely optimized and easy to work with for the developer and artists.
+
 Expanded list of systems:<br />
 ![alt text](https://github.com/scoat22/SampleCode/blob/main/Images/image2.png?raw=true)
 
