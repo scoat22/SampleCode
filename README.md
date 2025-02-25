@@ -23,7 +23,7 @@ The CharacterRenderingSystem will search for a sprite sheet that best matches th
 
 By no means is this a full display of my rendering code abilities. I'm writing a Vulkan layer for my 3D modeling software that will interact directly with GPUs. You can read more about my 3D modeler [here](https://ysidrohartzell.wordpress.com/).
 
-##Data Backend
+## Data Backend
 The Spreadsheet class is what drives the data backend. It's the "C" in ECS. It stores the component arrays. There are also helper functions in it for copying the spreadsheet and serializing it to disk:<br />
 [SpreadSheet.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SpreadSheet.cs)<br />
 
@@ -31,12 +31,12 @@ And here are the implementations for the two main component array types, FilledC
 [FilledColumn.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/FilledColumn.cs)<br />
 [SparseColumn.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SparseColumn.cs)<br />
 
-##Economy Game Code
+## Economy Game Code
 You probably also want to see some implementations of the game code. 
 The producer system is simple, every tick it will create an entity of the desired type:<br />
 [ProducerSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/ProducerSystem.cs.cs)<br />
 
-##Physics Code
+## Physics Code
 Most games have physics systems so I'll provide some physics code as well.
 The main velocity system will just apply each entity's total velocity (which is just a float3 component) to each entity's position.<br />
 [VelocitySystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/VelocitySystem.cs)<br />
