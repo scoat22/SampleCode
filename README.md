@@ -63,7 +63,7 @@ If I was to continue development, I would add:
 3. An actual game loop, where the player can do something to affect the world state. Such as "blessing or cursing" characters or something. Or maybe they can add/remove different rules to the economy simulation to achieve desired quests. Haven't decided exactly what the interaction system looks like yet.
 4. 
 
-## Cross Platform
+## Cross Platform Code
 Unity and Unreal handles cross platform challenges pretty seamlessly. Although sometimes you need to pay attention because some features are supported by a platform or not. Usually the engine documentation will tell you. But sometimes they don't, or its out of date, so it's best to test! (Testing is always helpful no matter what you're doing). 
 Additionally, I followed a guide pretty closesly, but I'm familiar with the Win32 API calls in C/C++. You can read the simple platform layer here: <br />
 [Win32_Game.cpp](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/Win32_Game.cpp)
