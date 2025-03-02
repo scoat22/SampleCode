@@ -8,7 +8,7 @@ It's not the most complicated game I've ever made, but the engine is the most ad
 I designed a backend [SpreadSheet](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SpreadSheet.cs) that holds all of the data in [simple arrays](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/FilledColumn.cs) and [sparse sets](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SparseColumn.cs). Therefore, serialization of all data is trivial. This is a surprisingly nice feature to have because you can save to disk with one function, or easily write a fancy replay system. 
 
 Click for a short video.<br />
-[![Watch the video](https://i9.ytimg.com/vi/6lIUX4n4voQ/mqdefault.jpg?sqp=CLS29b0G&rs=AOn4CLBsV5d_cPUFJnKE2s0omqivsAMplw)](https://youtu.be/6lIUX4n4voQ)
+[![Watch the video]([https://github.com/scoat22/SampleCode/blob/main/Images/Movie%20Thumbnail.png](https://github.com/scoat22/SampleCode/blob/main/Images/Movie%20Thumbnail.png))](https://youtu.be/6lIUX4n4voQ)
 
 I know it looks very simple, and it is (For instance it lacks a classic UI, but that was for design experimentation purposes. I have many [UI design showcases on my website](https://ysidrohartzell.wordpress.com/ui-design-portfolio/)). The engine code is really what shines. It's extremely optimized and easy to work with for the developers and artists.
 
