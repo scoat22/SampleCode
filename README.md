@@ -55,6 +55,8 @@ The MoveSelf system will just add a velocity multiplied by speed, towards the en
 And finally, the RandomMovementSystem will choose a random desired position for each entity (that has a DesiredDestination component)<br />
 [RandomMovementSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/RandomMovementSystem.cs)<br />
 
+- Regarding 3D, I know basic game vector math (getting vector directions via subtraction, using dot/cross product for calculating relative directions, using squared distance for distance comparisons, rays, ray casts, raymarching etc).
+
 The implementation of the actual game is not finished. It's been more of an engine architecture exploration. I explored many topics in engines/games
 For example:
 1. Automatic Multithreaded job scheduler, where jobs are automically scheduled and completed based on their dependencies. Which in this case, are simple component arrays. So you end up with a tree of dependencies that neatly completes. 
@@ -64,11 +66,6 @@ If I was to continue development, I would add:
 1. Trading.
 2. A simple supply and demand model where each agent stores the price they believe each good should cost.
 3. An actual game loop, where the player can do something to affect the world state. Such as "blessing or cursing" characters or something. Or maybe they can add/remove different rules to the economy simulation to achieve desired quests. Haven't decided exactly what the interaction system looks like yet.
-
-## Kart Racer
-Regarding my game programming knowledge for a Kart Racer game:
-- I made a cart racing game in C++ for one of my classes at University. It was a pretty simple game but I thought it might be relevant. The game imported models for the cart and track. It also accepted waypoint positions for the "enemy" carts to follow. And a heightmap that defined the height of the track at each location.
-- I know basic game vector math (getting vector directions via subtraction, using dot/cross product for calculating relative directions, using squared distance for distance comparisons, rays, ray casts, raymarching etc).
 
 ## Cross Platform Code
 Unity and Unreal handles cross platform challenges pretty seamlessly. Although sometimes you need to pay attention because some features are supported by a platform or not. Usually the engine documentation will tell you. But sometimes they don't, or its out of date, so it's best to test! (Testing is always helpful no matter what you're doing). 
