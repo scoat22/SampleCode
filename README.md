@@ -53,6 +53,16 @@ The producer system is simple, every tick it will create an entity of the desire
 
 You'll probably notice a "ComponentCode" reference in these system functions. They are basically component IDs corrosponding to an enum called ComponentCode. This allows a stable integer per component "type", so that we can instantly query the spreadsheet for the correct column.
 
+The implementation of the actual game is not finished. It's been more of an engine architecture exploration. I explored many topics in engines/games
+For example:
+1. Automatic Multithreaded job scheduler, where jobs are automically scheduled and completed based on their dependencies. Which in this case, are simple component arrays. So you end up with a tree of dependencies that neatly completes. 
+2. Game model complexity exploration. Games are just models. And models, unlike reality, are constrained by complexity. The more rules you add, complexity increases exponentially. 
+
+If I was to continue development, I would add:
+1. Trading.
+2. A simple supply and demand model where each agent stores the price they believe each good should cost.
+3. An actual game loop, where the player can do something to affect the world state. Such as "blessing or cursing" characters or something. Or maybe they can add/remove different rules to the economy simulation to achieve desired quests. Haven't decided exactly what the interaction system looks like yet.
+
 ## Physics Code
 Most games have physics systems so I'll provide some physics code as well. I know pretty basic physics implementation concepts, such as accumulating velocities (forces) every frame for each object, and then just simply adding that summed velocity to the object's position at the end of the frame. If you want to implement collision systems, you could implement conventional convex hull algorithms, maybe escaping early if a simple distance-squared check fails. You could get very thorough, but most games don't need advanced physics. It's best to stick to the simplest model that the game requires. <br />
 The main velocity system will just apply each entity's total velocity (which is just a float3 component) to each entity's position.<br />
@@ -65,16 +75,6 @@ And finally, the RandomMovementSystem will choose a random desired position for 
 [RandomMovementSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/RandomMovementSystem.cs)<br />
 
 Regarding 3D, I know basic game vector math (getting vector directions via subtraction, using dot/cross product for calculating relative directions, using squared distance for distance comparisons, rays, ray casts, raymarching etc).
-
-The implementation of the actual game is not finished. It's been more of an engine architecture exploration. I explored many topics in engines/games
-For example:
-1. Automatic Multithreaded job scheduler, where jobs are automically scheduled and completed based on their dependencies. Which in this case, are simple component arrays. So you end up with a tree of dependencies that neatly completes. 
-2. Game model complexity exploration. Games are just models. And models, unlike reality, are constrained by complexity. The more rules you add, complexity increases exponentially. 
-
-If I was to continue development, I would add:
-1. Trading.
-2. A simple supply and demand model where each agent stores the price they believe each good should cost.
-3. An actual game loop, where the player can do something to affect the world state. Such as "blessing or cursing" characters or something. Or maybe they can add/remove different rules to the economy simulation to achieve desired quests. Haven't decided exactly what the interaction system looks like yet.
 
 ## Cross Platform Code
 Unity and Unreal handles cross platform challenges pretty seamlessly. Although sometimes you need to pay attention because some features are supported by a platform or not. Usually the engine documentation will tell you. But sometimes they don't, or its out of date, so it's best to test! (Testing is always helpful no matter what you're doing). 
