@@ -44,6 +44,8 @@ And here are the implementations for the two main component array types, FilledC
 [FilledColumn.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/FilledColumn.cs)<br />
 [SparseColumn.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SparseColumn.cs)<br />
 
+It's impossible to make a game with perfect linear access memory (unless your game is really boring or fluid sim or something). But the important thing is to be aware of memory access patterns so that you can observe them and improve them.
+
 ## Economy Game Code
 You probably also want to see some implementations of the game code. 
 The producer system is simple, every tick it will create an entity of the desired type:<br />
