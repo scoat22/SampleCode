@@ -32,7 +32,6 @@ public unsafe class ProducerSystem : MonoBehaviour, ISystem
         NativeSparseSet<short>    health      = sheet.GetSparseSet<short>((int)ComponentCode.Health);
         NativeSparseSet<EntityId> pullsEntity = sheet.GetSparseSet<EntityId>((int)ComponentCode.PullsEntity);
 
-        //Debug.LogFormat("New nEntities after creating {0} products: {1}", nEntities, sheet.nEntities);
         int prev_nEntities = sheet.nEntities;
         for (int i = 0; i < nEntities; i++)
         {
