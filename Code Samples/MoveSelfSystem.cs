@@ -86,7 +86,8 @@ public unsafe class MoveSelfSystem : MonoBehaviour, ISystem
             _Position = position,
             _Velocity = velocity,
             _Size = size,
-
+            
+        // This .Schedule call is an extension method I wrote that integrates with my automatic scheduler that completes jobs in order based on dependencies.
         }.Schedule(sheet,
             columnIdsReadOnly: new int[]
             {
