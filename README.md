@@ -40,7 +40,7 @@ And here are the implementations for the two main component array types, FilledC
 ## Economy Game Code
 You probably also want to see some implementations of the game code. 
 The producer system is simple, every tick it will create an entity of the desired type:<br />
-[ProducerSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/ProducerSystem.cs.cs)<br />
+[ProducerSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/ProducerSystem.cs)<br />
 
 You'll probably notice a "ComponentCode" reference in these system functions. They are basically component IDs corrosponding to an enum called ComponentCode. This allows a stable integer per component "type", so that we can instantly query the spreadsheet for the correct column.
 
