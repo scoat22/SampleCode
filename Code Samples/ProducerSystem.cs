@@ -24,6 +24,9 @@ public unsafe class ProducerSystem : MonoBehaviour, ISystem
 
         // Need to get producers again, since the pointer may have changed. 
         producers = sheet.GetSparseSet((int)producerComponent);
+        
+        // "NativeSparseSet" is a struct I wrote to give jobs access to the sparse columns 
+        // (there's a conversion function happening in ParallelSpreadSheet.GetSparseSet, but it just copies pointers to the data).
         NativeSparseSet           products    = sheet.GetSparseSet((int)productComponent);
         NativeArray<float3>       position    = sheet.GetArray<float3>((int)ComponentCode.Position);
         NativeSparseSet<float3>   velocity    = sheet.GetSparseSet<float3>((int)ComponentCode.Velocity);
