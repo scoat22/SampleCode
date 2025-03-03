@@ -8,7 +8,7 @@ It's not the most complicated game I've ever made, but the engine is the most ad
 I designed a backend [SpreadSheet](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SpreadSheet.cs) that holds all of the data in [simple arrays](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/FilledColumn.cs) and [sparse sets](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SparseColumn.cs). Therefore, serialization of all data is trivial. This is a surprisingly nice feature to have because you can save to disk with one function, or easily write a fancy replay system. 
 
 Click for a short video.<br />
-[![Watch the video](https://github.com/scoat22/SampleCode/blob/main/Images/Movie%20Thumbnail.png)](https://youtu.be/3_JLuQ4G5Wg)
+[![Watch the video](https://github.com/scoat22/SampleCode/blob/main/Images/Movie%20Thumbnail.png)](https://youtu.be/Oh0jZCZwskU)
 
 Visually its simple, because I wanted to focus on the engine code.
 
