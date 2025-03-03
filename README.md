@@ -10,7 +10,7 @@ I designed a backend [SpreadSheet](https://github.com/scoat22/SampleCode/blob/ma
 Click for a short video.<br />
 [![Watch the video](https://github.com/scoat22/SampleCode/blob/main/Images/Movie%20Thumbnail.png)](https://youtu.be/6lIUX4n4voQ)
 
-I know it looks very simple, and it is (For instance it lacks a classic UI, but that was for design experimentation purposes. I have many [UI design showcases on my website](https://ysidrohartzell.wordpress.com/ui-design-portfolio/)). The engine code is really what shines. It's extremely optimized and easy to work with for the developers and artists.
+Visually its simple, because I wanted to focus on the engine code.
 
 I set up the systems grouped by tick frequency:<br />
 ![alt text](https://github.com/scoat22/SampleCode/blob/main/Images/image1.png?raw=true)
