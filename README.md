@@ -27,7 +27,7 @@ Additionally, for my 3D modeler, I added a query system, so that systems only up
 
 If I were to continue with this engine, one thing I might add would be chunking the component arrays into 64 byte (or cache line size) chunks, so that each chunk could have an semaphore/lock embedded into the data, for increased multi-threading granularity (systems would be able to lock individual chunks instead of the whole array, freeing up the rest of the program to run easier). Of course there's always tradeoffs here, so it just depends on the use case for the engine. One type of program might benefit from this, while another might not. So it's good practice to build in opt in/out support for each feature.  
 
-## Rendering 
+## Rendering Code
 The rendering systems are in the 1/30 Seconds group, meaning they'll get ticked 30 times a second. The way I setup the renderer is pretty interesting. If you want to dig into it, the code is here:<br />
 [CharacterRenderingSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/CharacterRenderingSystem.cs)<br />
 [GeneralSpriteRenderingSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/GeneralSpriteRendereringSystem.cs)<br />
@@ -36,7 +36,7 @@ The CharacterRenderingSystem will search for a sprite sheet that best matches th
 
 By no means is this a full display of my rendering code abilities. I'm writing a Vulkan layer for my 3D modeling software that will interact directly with GPUs. You can read more about my render code [here](https://ysidrohartzell.wordpress.com/shaders-materials/) or my 3D modeler [here](https://ysidrohartzell.wordpress.com/).
 
-## Data Backend
+## Data Backend Code
 The Spreadsheet class is what drives the data backend. It's the "C" in ECS. It stores the component arrays. There are also helper functions in it for copying the spreadsheet and serializing it to disk:<br />
 [SpreadSheet.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SpreadSheet.cs)<br />
 
