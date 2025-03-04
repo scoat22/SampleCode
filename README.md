@@ -10,7 +10,7 @@ I designed a backend [SpreadSheet](https://github.com/scoat22/SampleCode/blob/ma
 Click for a short video.<br />
 [![Watch the video](https://github.com/scoat22/SampleCode/blob/main/Images/Movie%20Thumbnail.png)](https://youtu.be/Oh0jZCZwskU)
 
-Visually its simple, because I wanted to focus on the engine code. Also, I haven't tested it, but if you were to scale up the simulation it would probably run many orders of magnitude faster than typical object-oriented code. That's because the entire memory layout is planned. It's not just random heap allocations, which is what OOP typically looks like. Therefore, the cache misses are reduced thus dramatically speeding up the program. The data structures are kept small to minimze memory movement. These ideas are expressed in other ECS explanations which you can research on your own.
+Visually its simple, because I wanted to focus on the engine code. Also, I haven't tested it, but if you were to scale up the simulation it would probably run many orders of magnitude faster than typical object-oriented code. That's because the entire memory layout is planned. It's not just random heap allocations, which is what OOP typically looks like. Therefore, the cache misses are reduced thus dramatically speeding up the program. The data structures are kept small to minimize memory movement. These ideas are expressed in other ECS explanations which you can research on your own.
 
 I set up the systems grouped by tick frequency:<br />
 ![alt text](https://github.com/scoat22/SampleCode/blob/main/Images/image1.png?raw=true)
@@ -40,7 +40,7 @@ By no means is this a full display of my rendering code abilities. I'm writing a
 The Spreadsheet class is what drives the data backend. It's the "C" in ECS. It stores the component arrays. There are also helper functions in it for copying the spreadsheet and serializing it to disk:<br />
 [SpreadSheet.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SpreadSheet.cs)<br />
 
-And here are the implementations for the two main component array types, FilledColumn and SparseColumn. The FilledColumn is basically just an array and it means that every entity has that component (used for common components like position, sprite, size, etc). The SparseColumn is used for uncommon components, like velocity, race, health, or any specific piece of data. You can read more about ECS online, but basicaly then whole point of ECS is aligning all the component data in tightly packed arrays so that system code can blaze through it in a single cache line (with no cache misses, which are stealth performance killers). The sparse column is basically an implementation of a sparse set. I also have a sparse column with data but the implementation isn't shown here.<br />
+And here are the implementations for the two main component array types, FilledColumn and SparseColumn. The FilledColumn is just an array and it means that every entity has that component (used for common components like position, sprite, size, etc). The SparseColumn is used for uncommon components, like velocity, race, health, or any specific piece of data. You can read more about ECS online, but essentially then whole point of ECS is aligning all the component data in tightly packed arrays so that system code can blaze through it in a single cache line (with no cache misses, which are stealth performance killers). The sparse column is just an implementation of a sparse set. I also have a sparse column with data but the implementation isn't shown here.<br />
 [FilledColumn.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/FilledColumn.cs)<br />
 [SparseColumn.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/SparseColumn.cs)<br />
 
@@ -51,7 +51,7 @@ You probably also want to see some implementations of the game code.
 The producer system is simple, every tick it will create an entity of the desired type:<br />
 [ProducerSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/ProducerSystem.cs)<br />
 
-You'll probably notice a "ComponentCode" reference in these system functions. They are basically component IDs corrosponding to an enum called ComponentCode. This allows a stable integer per component "type", so that we can instantly query the spreadsheet for the correct column.
+You'll probably notice a "ComponentCode" reference in these system functions. They are basically component IDs corresponding  to an enum called ComponentCode. This allows a stable integer per component "type", so that we can instantly query the spreadsheet for the correct column.
 
 The implementation of the actual game is not finished. It's been more of an engine architecture exploration. I explored many topics in engines/games
 For example:
@@ -78,7 +78,7 @@ Regarding 3D, I know basic game vector math (getting vector directions via subtr
 
 ## Cross Platform Code
 Unity and Unreal handles cross platform challenges pretty seamlessly. Although sometimes you need to pay attention because some features are supported by a platform or not. Usually the engine documentation will tell you. But sometimes they don't, or its out of date, so it's best to test! (Testing is always helpful no matter what you're doing). 
-Additionally, I followed a guide pretty closesly and became familiar with the Win32 API calls in C/C++. You can read the resulting simple platform layer here: <br />
+Additionally, I followed a guide pretty closely and became familiar with the Win32 API calls in C/C++. You can read the resulting simple platform layer here: <br />
 [Win32_Game.cpp](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/Win32_Game.cpp)
 
 I think that having a single dedicated platform layer file is way better than random "#if Platform_Windows" statements scattered everywhere in the codebase. Those scattered statements make it way harder to port to more platforms, because you're dealing with random blocks of code all over the code base.
