@@ -1,5 +1,5 @@
-// The code for this project is written in C# in conjunction with the Unity engine.
-// Although, most Unity features are not used. I mainly stuck with the engine to have a useable graphics API. Future projects are using Vulkan API.
+// Note: The code for this project is written in C# in conjunction with the Unity engine.
+// Although, most Unity features are not used. I mainly stuck with the engine to have a useable graphics API. Future projects use the lower level Vulkan API.
 
 using System.Collections;
 using System.Collections.Generic;
@@ -14,13 +14,16 @@ using SpreadSheetNS.Parallel;
 
 using static Unity.Mathematics.math;
 
-// If you're not familiar with Unity, "MonoBehaviour" is just the base class that lets you have an entry-point into
+// Note: If you're not familiar with Unity, "MonoBehaviour" is just the base class that lets you have an entry-point into
 // the application's main loop. And it lets you rearrange scripts visually, which is helpful for design. On a real project,
-// I'd develop a custom system visualization solution that renders a UI element per ISystem instance.
+// I'd develop a custom UI solution for this.
 public class CharacterRenderingSystem : MonoBehaviour, ISystem
 {
+    // Note: "CharacterSpritesheetScriptableAsset" lets artists easily define some component traits for the sprite sheet that they made. This makes it super
+    // easy for them to get as granular as they want. If an artist is excited to make a sprite sheet for a "male" "elf" "warrior", they can make a dedicated spritesheet for it 
+    // and simply add the component definitions from the dropdown menu.
     [SerializeField] List<CharacterSpritesheetScriptableAsset> _Characters = new List<CharacterSpritesheetScriptableAsset>();
-
+    
     // Need a mesh for each character type
     Dictionary<CharacterSpritesheetScriptableAsset, GameObject> _MeshGameObjects = new Dictionary<CharacterSpritesheetScriptableAsset, GameObject>();
     [SerializeField] Shader _BillboardShader;

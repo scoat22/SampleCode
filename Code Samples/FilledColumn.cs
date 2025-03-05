@@ -67,10 +67,6 @@ public unsafe class FilledColumn : IColumn
     /// <param name="garbage_ids">The set of garbage EntityIds to be removed</param>
     public void Extract_Entities_Sorted(NativeArray<int> garbage_ids)
     {
-        if(ti.type == typeof(EntityId))
-        {
-            throw new NotImplementedException("Need to implement FilledColumn.Extract for <EntityIds>");
-        }
         //Debug.LogFormat("Extracting {0} entities", garbage_ids.Length); // this is 0
         _Capacity -= garbage_ids.Length;
         byte* dest = ColumnUtility.MallocTracked(_Capacity, ti);
@@ -105,101 +101,6 @@ public unsafe class FilledColumn : IColumn
         data = dest;
         *_nEntities -= garbage_ids.Length;
     }
-    
-    // Just for reference; this is half fixed
-    /*public override void Extract_Entities_Sorted(NativeArray<int> garbage_ids)
-    {
-        // Why do we have a dictionary? We can just use an array int[].
-        var oldToNew = new NativeArray<int>(data.Length, Allocator.Temp, NativeArrayOptions.UninitializedMemory);
-
-        var temp = new NativeArray<EntityId>(_Count, Allocator.Persistent, NativeArrayOptions.UninitializedMemory); //- garbageIDs.Count()
-        //Debug.Log("Old length: " + _Count + ", new length: " + temp.Length);
-        // Add everything to temp, except the garbage
-        for (EntityId id = 0, id2 = 0; id < _Count; id++)
-        {
-            // keep track of the old and new ID
-            oldToNew[id] = id2;
-            if (!garbage_ids.Contains(new EntityId(id)))
-            {
-                temp[id2] = _Data[id];
-                id2++;
-            }
-        }
-        *count -= garbage_ids.Length;
-
-        // Now we update all values (since things were shifted)
-        for (int i = 0; i < *count; i++)
-        {
-            EntityId id = temp[i];
-            temp[i] = new EntityId(oldToNew[id]);
-            //Debug.Log(ID + "->" + oldToNew[ID]);
-        }
-
-        oldToNew.Dispose();
-        data.Dispose();
-        _Data = temp;
-    }*/
-
-    /*public void Extract_Entities_Sorted_ShiftIds(NativeArray<int> garbage_ids)
-    {
-        // Need to recreate the arrays
-        int capacity = _Capacity - garbage_ids.Length;
-        IntArray sparse2 = new IntArray(capacity);    // Allocate new buffers
-        IntArray dense2 = new IntArray(capacity);
-        EntityId* dest = (EntityId*)ColumnUtility.MallocTracked(capacity, ti);
-        EntityId* src = (EntityId*)data;
-        // Clear the memory
-        if (ti.ClearMemory) ColumnUtility.ClearMemory((byte*)dest, 0, capacity, ti);
-        int size = ti.size;
-        int gi = 0; // garbageId indexer
-        EntityId id2 = 0; // new entity Ids
-
-        // Type is EntityId
-        // Keep a mapping of old ids to new ids (doesn't need to be a dictionary)
-        var oldToNew = new NativeArray<int>(nEntities, Allocator.Temp, NativeArrayOptions.UninitializedMemory);
-        
-        // Add everything to temp, except the garbage
-        for (EntityId id = 0; id < nEntities; id++) 
-        {
-            // keep track of the old and new ID
-            oldToNew[id] = id2;
-
-            if (gi < garbage_ids.Length &&
-                id == garbage_ids[gi])
-            {
-                gi++; // Removing id
-            }
-            else
-            {
-                // Keeping id
-                dest[id2] = data[id]; // copy data
-                id2++;
-            }
-        }
-        *_nEntities -= garbage_ids.Length;
-
-        // Now we update all values (since things were shifted)
-        for (i = 0; i < nEntities; i++)
-        {
-            EntityId id = dest[i];
-            dest[i] = new EntityId(oldToNew[id]); // old working code
-
-            UnsafeUtility.MemCpy(
-                        dest + (size * i),            // destination
-                        data + (size * oldToNew[id]), // source
-                        size);
-
-            Debug.LogFormat("{0} -> {1}", id, oldToNew[id]);
-        }
-        oldToNew.Dispose();
-
-        // Dispose old buffers and swap
-        _Capacity = capacity;
-
-        // Data swap
-        UnsafeUtility.FreeTracked(data, Allocator.Persistent);
-        data = (byte*)dest;
-    }*/
 
     /// <summary>
     /// Allocate space without incrementing '_NumEntities'. Use if you know how many entities you'll be adding before the next
