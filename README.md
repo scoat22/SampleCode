@@ -83,6 +83,9 @@ Additionally, I followed a guide pretty closely and became familiar with the Win
 
 I think that having a single dedicated platform layer file is way better than random "#if Platform_Windows" statements scattered everywhere in the codebase. Those scattered statements make it way harder to port to more platforms, because you're dealing with random blocks of code all over the code base.
 
+I'll also include this simple Vulkan API layer that I wrote while following a guide. It's not super custom or anything, but it works. I'm planning on expanding it to cover all of my current graphics needs for my 3D modeler and game engines.
+[Vulkan_Game.cpp](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/Vulkan_Game.cpp)
+
 ### Debugging
 While developing this simple Win32 platform layer, I became very familiar with Visual Studio's debugger and underlying build process. A debugger is just a program like any other, that can attach to another program "as a debugger at the operating system level" (I think that's important to know, because debuggers are not magic). I also became very familiar with some of Visual Studio's more esoteric features like additional build directories, library directories, and command line arguments. These are important when developing a C/C++ project and using additional APIs, like Vulkan. Also, since Visual Studio tends to break a lot (it's a bloated program), it's good to know where all the settings are so that you can quickly restore them to what you want. 
 When debugging, it's essential to use breakpoints, step through code, and utilize the watch window. The watch window lets you watch memory (variable values) as you step through code, without resorting to tediously adding print statements everywhere. This tremendously speeds up development time. 
