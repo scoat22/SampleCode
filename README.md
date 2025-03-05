@@ -71,7 +71,7 @@ The main velocity system will just apply each entity's total velocity (which is 
 The MoveSelf system will just add a velocity multiplied by speed, towards the entity's desired position:<br />
 [MoveSelf.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/MoveSelfSystem.cs)<br />
 
-And finally, the RandomMovementSystem will choose a random desired position for each entity (that has a DesiredDestination component)<br />
+And finally, the RandomMovementSystem will choose a random desired position for each entity that has a DesiredDestination component.<br />
 [RandomMovementSystem.cs](https://github.com/scoat22/SampleCode/blob/main/Code%20Samples/RandomMovementSystem.cs)<br />
 
 Regarding 3D, I know basic game vector math (getting vector directions via subtraction, using dot/cross product for calculating relative directions, using squared distance for distance comparisons, rays, ray casts, raymarching etc).
